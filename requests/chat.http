@@ -1,0 +1,4 @@
+GET http://localhost:3001/chat/ask
+
+# Request Dto: Prompt
+# Response Dto: text stream

@@ -1,8 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { ChatGateway } from './chat.gateway';
 
 @Injectable()
 export class ChatService {
+    constructor(private gateway: ChatGateway){}
+
     getChat(prompt: string) {
-        throw new Error('Method not implemented.');
+        return this.gateway.getChat(prompt);
     }
 }
