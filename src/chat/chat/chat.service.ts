@@ -5,7 +5,7 @@ import { ChatGateway } from './chat.gateway';
 export class ChatService {
     constructor(private gateway: ChatGateway){}
 
-    getChat(prompt: string) {
-        return this.gateway.getChat(prompt);
+    async getChat(prompt: string) {
+        return await this.gateway.getChat(prompt);
     }
 }

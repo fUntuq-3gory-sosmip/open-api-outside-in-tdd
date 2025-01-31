@@ -21,13 +21,12 @@ describe('ChatController', () => {
     expect(controller).toBeDefined();
   });
 
-  it("should call the chat service", () => {
+  it("should call the chat service", async () => {
     service.getChat = vi.fn().mockImplementationOnce(() => 'chat');
 
-    const response = controller.getChat('prompt');
+    const response = await controller.getChat('prompt');
 
     expect(service.getChat).toHaveBeenCalled();
-    expect(response).toBe('chat');
-
+    expect(response.message).toBe('chat');
   });
 });
